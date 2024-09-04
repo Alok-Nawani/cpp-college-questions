@@ -1,4 +1,5 @@
-QUESTION.  Define a class named `Hotel` in C++ with the following specifications: 
+QUESTION:-
+Define a class named `Hotel` in C++ with the following specifications: 
 Private Members: - Rno: Data member to store the room number. - Name: Data member to store the customer's name. - Tariff: Data member to store the per-day charges.  - NOD: Data member to store the number of days of stay. - CALC (): Function to calculate and return the total amount as `NOD * Tariff`. If the value of `NOD * Tariff` 
 exceeds 10,000, the total amount should be calculated as `1.05 * NOD * Tariff` 
 Public Members: - Checkin(): Function to input the values for `Rno`, `Name`, `Tariff`, and `NOD`. - Checkout (): Function to display the values of `Rno`, `Name`, `Tariff`, `NOD`, and the total amount. - The total amount should be calculated by calling the `CALC ()` function.
