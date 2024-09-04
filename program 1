@@ -1,4 +1,5 @@
-QUESTION. 	Write a C++ to calculate the electricity bill of a user according to the below criteria: 
+QUESTION:-
+Write a C++ to calculate the electricity bill of a user according to the below criteria: 
 Input: The program prompts the user to enter their name, and the number of units consumed. Charges Calculation: For the first 100 units, the charge is 60 paise per unit. For the next 200 units, the charge is 80 paise per unit. For units beyond 300, the charge is 90 paise per unit. A minimum charge of Rs 50 is applied if the total charge is less than Rs 50. If the charge exceeds Rs 300, a 15% surcharge is added. 
 Output: The program displays the user's name, the number of units consumed, and the total charges in a currency format with two decimal points.
 
