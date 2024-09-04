@@ -1,0 +1,37 @@
+Question -:
+Construct a C++ program that removes a specific character from a given string and
+return the updated string.
+ Typical Input: computer science is the future
+ Typical Output: compuer science is he fuure
+
+SOURCE CODE
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+string removeCharacter(const string& str, char charToRemove) {
+    string result;
+    for (char c : str) {
+        if (c != charToRemove) {
+            result += c;
+        }
+    }
+    return result;
+}
+
+int main() {
+    string inputString;
+    char characterToRemove;
+    cout << "Enter the string: ";
+    getline(cin, inputString);
+    
+    cout << "Enter the character to remove: ";
+    cin >> characterToRemove;
+
+    string updatedString = removeCharacter(inputString, characterToRemove);
+
+    cout << "Updated string: " << updatedString << endl;
+
+    return 0;
+}
