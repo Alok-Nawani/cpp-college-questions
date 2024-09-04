@@ -1,4 +1,5 @@
-QUESTION.  Anna is a contender for valedictorian of her high school. She wants to know how many students (if any) have 
+QUESTION:-
+Anna is a contender for valedictorian of her high school. She wants to know how many students (if any) have 
 scored higher than her in the exams given during this semester. 
  
 Create a class named Student with the following specifications: 
