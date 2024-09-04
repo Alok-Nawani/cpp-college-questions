@@ -1,0 +1,50 @@
+QUESTION.  You are given an array A of N elements. Now, you need to choose the best index of this array A. An index of 
+the array is called best if the special sum of this index is maximum across the special sum of all the other indices. 
+To calculate the special sum for any index i, you pick the first element that is and add it to your sum. Now you 
+pick next 2 elements i.e.  A[i+1] and A[i+2], and add both of them to your sum. Now, you will pick the next 3 
+elements, and this continues till the index for which it is possible to pick the elements. For example: 
+If our array contains 10 elements and you choose the index to be 3, then your special sum is denoted by – A[3] + 
+(A[4] + A[5]) + (A[6] + A[7] + A[8]), beyond this it’s not possible to add further elements as the index value 
+will cross the value. 
+Find the best index and, in the output print its corresponding special sum. Note that there may be more than one 
+best index, but you need only to print the maximum special sum. 
+Input 
+The first line contains an integer N as input. Next line contains N space-separated integers denoting the elements 
+of the array A. 
+Output 
+In the output, you have to print an integer that denotes the maximum special sum and the index 
+Sample Input:  
+6 -3 2 3 -4 3 1
+The maximum value among all the special values is 3 at index 5.
+
+SOURCE CODE
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n; 
+    cout<<"Enter the number of elements in array\n";
+    cin>>n;
+    cout<<"Enter the elements in array\n";
+    int num[n];
+    for(int i=0;i<n;i++){
+        cin>>num[i];
+    }
+    int max=-1;
+    for(int k=0;k<n;k++){
+        int sum=num[k],x=1,j;
+        for(int i=k+1;i<n;i+=x){
+            if((i+x)<n){
+                for(j=i;j<=x+i;j++){
+                    sum+=num[j];
+                }
+                x++;
+            }
+        }
+        if(sum>max){
+            max=sum;
+        }
+    }
+    cout<<max<<endl;
+    return 0;
+}
