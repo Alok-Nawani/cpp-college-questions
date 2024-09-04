@@ -1,4 +1,5 @@
-QUESTION.  You are given an array A of N elements. Now, you need to choose the best index of this array A. An index of 
+QUESTION:-
+You are given an array A of N elements. Now, you need to choose the best index of this array A. An index of 
 the array is called best if the special sum of this index is maximum across the special sum of all the other indices. 
 To calculate the special sum for any index i, you pick the first element that is and add it to your sum. Now you 
 pick next 2 elements i.e.  A[i+1] and A[i+2], and add both of them to your sum. Now, you will pick the next 3 
