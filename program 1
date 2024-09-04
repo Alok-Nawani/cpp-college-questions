@@ -1,0 +1,63 @@
+QUESTION. 	Write a C++ to calculate the electricity bill of a user according to the below criteria: 
+Input: The program prompts the user to enter their name, and the number of units consumed. Charges Calculation: For the first 100 units, the charge is 60 paise per unit. For the next 200 units, the charge is 80 paise per unit. For units beyond 300, the charge is 90 paise per unit. A minimum charge of Rs 50 is applied if the total charge is less than Rs 50. If the charge exceeds Rs 300, a 15% surcharge is added. 
+Output: The program displays the user's name, the number of units consumed, and the total charges in a currency format with two decimal points.
+
+SOURCE CODE
+
+#include <iostream>
+using namespace std;
+class bill{
+private:
+float unit;
+string name;
+public:
+void calc(){
+    float m,s;
+   if(unit <=100.0){
+m=unit*0.6;
+s=50+m;
+cout<<"Bill of "<<name <<" is "<<s <<"R"<<endl;
+}
+else if(unit>100.0 && unit<=300.0){
+m=100.0*0.6;
+unit=unit-100.0;
+m=m+(unit*0.8);
+s=50+m;
+cout<<"Bill of "<<name <<" is "<<s <<"R"<<endl;
+}
+else if(unit>300.0){
+m=100.0*0.6;
+unit=unit-100.0;
+m=m+(200.0*0.8);
+unit=unit-200.0;
+m=m+(unit*0.9);
+s=50+m;
+s=s+(0.15*s);
+cout<<"Bill of "<<name <<" is "<<s <<"R"<<endl;
+}
+}
+public:
+void info(string name,float unit){
+    this->name=name;
+    this->unit=unit;
+}
+};
+int main()
+{
+    int n;
+    cout<<"Enter n \n";
+    cin>>n;
+bill b[n];
+string name;
+float unit;
+for(int i=0;i<n;i++){
+    cout<<"Enter name , unit\n";
+    cin>>name>>unit;
+b[i].info(name,unit);
+}
+for(int i=0;i<n;i++){
+    b[i].calc();
+    cout<<endl;
+}
+return 0;
+}
