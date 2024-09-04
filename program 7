@@ -1,0 +1,67 @@
+Question -:
+
+Implement a Program in C++ by defining a class to represent a bank account.
+Include the following:
+Data Members
+● Name of the depositor
+● Account number
+● Type of account (Saving, Current etc.)
+● Balance amount in the account
+Member Functions
+● To assign initial values
+● To deposit an amount
+● To withdraw an amount after checking the balance
+● To display name and balance
+
+SOURCE CODE
+
+#include<iostream>
+using namespace std;
+class bank{
+    string name;
+    int acc;
+    string type;
+    float balance;
+    public:
+    void setval(string name,int acc,string type,float balance){
+        this->name=name;
+        this->acc=acc;
+        this->type=type;
+        this->balance=balance;
+    }
+    void deposit(int amt){
+        balance=balance+amt;
+    }
+    void withdraw (int amt){
+        if(amt<=balance){
+            balance=balance-amt;
+        }
+        else
+        cout<<"Insufficient balance\n";
+    }
+    void display(){
+        cout<<"Your name:- "<< name<<endl<<"Your current balance:- "<< balance<<endl;
+    }
+};
+int main(){
+    bank b1;
+    int n,x;
+    b1.setval("Alok",237480,"saving",10000);
+    cout<<"Enter ammount\n";
+    cin>>n;
+    cout<<"Enter 0 to withdraw and 1 to deposite\n";
+    cin>>x;
+    switch(x){
+        case 0:
+        b1.withdraw(n);
+        break;
+        case 1:
+        b1.deposit(n);
+        break;
+        default:
+        cout<<"Wrong choice\n";
+        break;
+    }
+    b1.display();
+return 0;
+}
