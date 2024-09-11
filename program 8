@@ -1,0 +1,63 @@
+Question :-
+
+Construct a Program in C++ to show the working of function 
+overloading(compile time polymorphism) by using a function named 
+calculate Area () to calculate area of square, rectangle and triangle using
+different signatures as required.
+
+SOURCE CODE :
+#include<iostream>
+#include <math.h>
+using namespace std;
+class area{
+private:
+//float a,l,b,s1,s2,s3;
+public :
+float calculatearea(float a){
+float s=a*a;
+return s;
+}
+float calculatearea(float l , float b){
+return (l*b);
+}
+float calculatearea(float s1,float s2,float s3){
+float s=(s1+s2+s3)/2;
+float area= sqrt(s*(s-s1)*(s-s2)*(s-s3));
+return area;
+}
+};
+
+int main(){
+int n;
+area A;
+float s;
+cout<<"Enter 1 to find area of square\n Enter 2 ti find area of rectangle\n Enter 3 to find area of triangle\n";
+cin>>n;
+switch (n){
+case 1:
+float a;
+cout<<"Enter the side of square\n";
+cin>>a;
+ s=A.calculatearea(a);
+cout<<"Area of square is "<<s<<endl;
+break;
+case 2:
+float l,b;
+cout<<"Enter the length and breadth of rectangle\n";
+cin>>l>>b;
+ s=A.calculatearea(l,b);
+cout<<"Area of rectangle is "<<s<<endl;
+break;
+case 3:
+float s1,s2,s3;
+cout<<"Enter the sides of triangle\n";
+cin>>s1>>s2>>s3;
+ s=A.calculatearea(s1,s2,s3);
+cout<<"Area of triangle is "<<s<<endl;
+break;
+default:
+cout<<"Wrong choice\n";
+break;
+}
+return 0;
+}
