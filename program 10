@@ -1,0 +1,66 @@
+Question :-
+
+Imagine a tollbooth with a class called TollBooth. The two data items are of
+type unsigned int and double to hold the total number of cars and total
+amount of money collected. A constructor initializes both of these data
+members to 0. A member function called payingCar()increments the car total
+and adds 0.5 to the cash total. Another function called nonPayCar()  increments
+the car total but adds nothing to the cash total. Finally a member function 
+called display()shows the two totals. Include a program to test this class. 
+This program should allow the user to push one key to count a paying car and 
+another to count a non paying car. Pushing the ESC key should cause the program to
+print out the total number of cars and total cash and then exit.
+
+SOURCE CODE :
+
+#include<iostream>
+using namespace std;
+class TollBooth{
+    private:
+    int totalCars;
+    double totalCash;
+    public:
+    TollBooth(){
+        totalCars=0;
+        totalCash=0.0;
+    }
+    void payingCars(){
+        totalCars++;
+        totalCash+=0.50;
+    }
+    void nonPayingCars(){
+        totalCars++;
+    }
+    void display(){
+        cout<<"Total number of cars: "<<totalCars <<endl;
+        cout<<"Total cash collected : "<< totalCash <<endl;
+    }
+};
+
+int main(){
+    TollBooth tollbooth;
+    char choice;
+    do{
+        cout<< "Press (P - Paid , N - Not Paid , Esc - Display , Q - Quit)->";
+        cin>> choice;
+
+        switch(choice){
+            case 'P':
+            tollbooth.payingCars();
+            break;
+            case 'N':
+            tollbooth.nonPayingCars();
+            break;
+            case 27:
+            tollbooth.display();
+            break;
+            case 'Q':
+            cout<<"Exit successful"<<endl;
+            break;
+            default:
+            cout<<"Invalid choice."<<endl;
+        }
+    }
+    while(choice !='Q');
+    return 0;
+}
