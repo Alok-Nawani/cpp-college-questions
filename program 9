@@ -1,0 +1,120 @@
+Question:-
+
+Create a class called Invoice that a hardware store might use to represent 
+an invoice for an item sold at the store. An Invoice should include four pieces
+of information as instance.
+
+Data Members -
+
+partNumber (type String)
+
+partDescription (type String)
+
+quantity of the item being purchased (type int)
+
+price_per_item (type double)
+
+Your class should have a constructor that initializes the four instance
+variables. Provide a set and a get method for each instance variable. In 
+addition, provide a method named getInvoiceAmount() that calculates the
+invoice amount (i.e., multiplies the quantity by the price per item), then
+returns the amount as a double value. If the quantity is not positive, it should
+be set to 0. If the price per item is not positive, it should be set to0.0. Write a
+test application named invoice Test that demonstrates class Invoice's capabilities.
+
+SOURCE CODE:
+
+#include<iostream>
+using namespace std;
+class invoice{
+private:
+    string partnumber;
+    string partdescription;
+    int quantity;
+    double price;
+public:
+invoice(string partnumber,string partdescription,int quantity,double price){
+this->partnumber=partnumber;
+this->partdescription=partdescription;
+this->quantity=quantity;
+this->price=price;
+}
+void setPartNumber(string partnumber){
+this->partnumber=partnumber;
+}
+string getPartNumber()
+{
+return partnumber;
+}
+void setPartDescription(string partdescription){
+this->partdescription=partdescription;
+}
+string getPartDescription(){
+return partdescription;
+}
+void setQuantity(int quantity){
+if(quantity<0)
+this->quantity=0;
+else
+this->quantity=quantity;
+}
+int getQuantity(){
+return quantity;
+}
+void setPrice(double price){
+if(price<0)
+this->price=0;
+else
+this->price=price;
+}
+double getPrice(){
+return price;
+}
+double getinvoiceamount(){
+double cal=quantity*price;
+return cal;
+}
+};
+
+
+int main(){
+int c=0;
+    string partnumber;
+    string partdescription;
+    int quantity;
+    double price;
+  invoice object("abcdefgh","xyzqwertt",10,25000);
+   double cal=object.getinvoiceamount();
+cout<<cal<<endl;
+     while(c!=6){
+cout<<"Enter 1 to update partnumber\n Enter 2 to update partdescription\n Enter 3 to update quantity\n Enter 4 to update price\n Enter 5 to print the changed details\n Enter 6 to exit\n";
+     cout<<"Enter your choice\n";
+     cin>>c;
+switch(c){
+case 1:
+cin>>partnumber;
+object.setPartNumber(partnumber);
+break;
+case 2:
+cin>>partdescription;
+object.setPartDescription(partdescription);
+break;
+case 3:
+cin>>quantity;
+   object.setQuantity(quantity);
+break;
+case 4:
+cin>>price;
+object.setPrice(price);
+break;
+case 5:
+cal=object.getinvoiceamount();
+cout<<cal<<endl;
+break;
+case 6:
+cout<<"Loop exit and Details changed\n";
+}
+}
+  
+return 0;
+}
